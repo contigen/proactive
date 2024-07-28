@@ -2,32 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  body {
+    @apply m-4;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  h1 {
+    @apply font-bold
+  }
+
+  h2, h3 {
+    @apply font-semibold
+  }
+
+  h1, h2, h3 {
+    @apply tracking-tighter
+  }
+
+  h1 {
+    @apply text-5xl
+  }
+
+  h2 {
+    @apply text-4xl
+  }
+
+  h3 {
+    @apply text-2xl
+  }
+
+  h4 {
+    @apply text-base md:text-xl tracking-tight font-semibold
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .bubble {
+    max-width: 75ch;
+    word-wrap: break-word;
+    position: relative;
+    border-radius: 1.5rem;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 1rem;
+    }
+  }
+
+  .right {
+    &:before {
+      right: -7px;
+      width: 20px;
+      border-bottom-left-radius: 1rem;
+      @apply bg-gray-600 -z-10
+    }
+
+    &:after {
+      right: -26px;
+      width: 26px;
+      background-color: white;
+      border-bottom-left-radius: 10px;
+      @apply -z-10
+    }
+  }
+
+  .left {
+    &:before {
+      left: -7px;
+      width: 20px;
+      border-bottom-right-radius: 1rem;
+      @apply bg-blue-600 -z-10
+    }
+
+    &:after {
+      left: -26px;
+      width: 26px;
+      background-color: white;
+      border-bottom-right-radius: 10px;
+      @apply -z-10
+    }
   }
 }
