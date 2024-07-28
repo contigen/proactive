@@ -6,19 +6,20 @@ if (typeof window !== `undefined`) {
 }
 
 export function localStorage() {
+  const ACTIVITY_KEY = `pro-activity`
   function setItem(value: Activity) {
     const item = getItem()
     if (item) {
       const newItem = [...item, ...value]
-      storage?.setItem(`activity`, JSON.stringify(newItem))
+      storage?.setItem(ACTIVITY_KEY, JSON.stringify(newItem))
     }
-    storage?.setItem(`activity`, JSON.stringify(value))
+    storage?.setItem(ACTIVITY_KEY, JSON.stringify(value))
   }
   function replaceItem(value: Activity) {
-    storage?.setItem(`activity`, JSON.stringify(value))
+    storage?.setItem(ACTIVITY_KEY, JSON.stringify(value))
   }
   function getItem() {
-    const item = storage?.getItem(`activity`)
+    const item = storage?.getItem(ACTIVITY_KEY)
     if (item) return JSON.parse(item) as Activity
     return []
   }
@@ -29,7 +30,7 @@ export function localStorage() {
     replaceItem(newItem)
   }
   function clear() {
-    storage?.removeItem(`activity`)
+    storage?.removeItem(ACTIVITY_KEY)
   }
   return {
     setItem,
