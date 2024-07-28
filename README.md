@@ -6,7 +6,7 @@ This was a solo & rushed project, don't mind that.
 
 ## Current Features
 
-- Translate transcript into tasks with streaming support
+- Translate transcript into tasks with streaming support using Google Gemini AI & Vercel AI SDK
 - Interactive Links: Utilizes the Contact Picker API to generate clickable links for emails, calls, and SMS.
 - Space key to start speech recognition
 - Local storage persistence of tasks
