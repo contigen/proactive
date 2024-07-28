@@ -1,4 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ProActive
+
+ProActive is a to-do list web app with speech recongiton & AI to help avoid the mental inertia that occurs as a result of planning out one's day. Just speak your tasks and the App listens using the Web Speech API, sends the transcript to the AI service, and the tasks are generated.
+
+This was a solo & rushed project, don't mind that.
+
+## Current Features
+
+- Translate transcript into tasks with streaming support
+- Interactive Links: Utilizes the Contact Picker API to generate clickable links for emails, calls, and SMS.
+- Space key to start speech recognition
+- Local storage persistence of tasks
+
+## Potential Features
+
+PWA for native-app like feel with push notifications for timed tasks
+Refine ability to inline links
+Send mail on tasks' completion
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE.txt) file for details.
+
+## Support
+
+For any issues or questions, please open an issue on the GitHub repository.
 
 ## Getting Started
 
