@@ -13,5 +13,6 @@ export type Activity = {
   activityType: string
   location: string
   contact: string
+  link: string
   time: string
 }[]
